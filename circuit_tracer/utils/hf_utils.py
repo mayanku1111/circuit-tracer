@@ -10,10 +10,10 @@ from urllib.parse import parse_qs, urlparse
 import torch
 import yaml
 from huggingface_hub import get_token, hf_api, hf_hub_download, snapshot_download
-from huggingface_hub.constants import HF_HUB_ENABLE_HF_TRANSFER
 from huggingface_hub.utils.tqdm import tqdm as hf_tqdm
 from tqdm.contrib.concurrent import thread_map
-
+import os
+os.environ["HF_HUB_ENABLE_HF_TRANSFER"] = "1" 
 logger = logging.getLogger(__name__)
 
 
